@@ -44,11 +44,7 @@ FusionEKF::FusionEKF() {
           1,1,1,1;
   
   //the initial transition matrix F_
-  ekf_.F_ = MatrixXd(4,4);
-  ekf_.F_<< 1,0,1,0,
-            0,1,0,1,
-            0,0,1,0,
-            0,0,0,1;
+  ekf_.F_ = MatrixXd::Identity(4,4);
   
   //state covariance matrix P
   ekf_.P_ = MatrixXd(4,4);
